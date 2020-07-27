@@ -8,11 +8,11 @@ export interface SpotterAction {
   image: string,
 }
 
-export declare interface SpotterPlugin {
+export abstract class SpotterPlugin {
 
-  actions: SpotterAction[];
+  abstract get actions(): SpotterAction[];
 
-  onSelectAction(action: SpotterAction): void;
+  abstract onSelectAction(action: SpotterAction): void;
 
 }
 
