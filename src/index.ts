@@ -18,7 +18,7 @@ export interface SystemApplication {
 
 export abstract class SpotterPlugin {
 
-  abstract query(query: string): SpotterAction[]
+  abstract query(query: string): SpotterOption[]
 
 }
 
