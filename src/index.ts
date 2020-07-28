@@ -26,6 +26,8 @@ export abstract class SpotterApi {
 
   abstract shellCommand(command: string): void
 
-  abstract getAllSystemApplications(): SystemApplication[]
+  abstract getAllApplications(): Promise<SystemApplication[]>
+
+  abstract openApplication(path: string): void
 
 }
