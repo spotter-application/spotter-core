@@ -7,13 +7,20 @@ export interface SpotterOption {
   subtitle: string,
   image: string,
   action: SpotterAction;
-  shortKey: string,
 }
 
 export interface SystemApplication {
   title: string,
   path: string,
   icon: string,
+}
+
+export interface SystemApplicationDimensions {
+  appName: string,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
 }
 
 export abstract class SpotterPlugin {
@@ -29,5 +36,9 @@ export abstract class SpotterApi {
   abstract getAllApplications(): Promise<SystemApplication[]>
 
   abstract openApplication(path: string): void
+
+  abstract setDimensions(appName: string, x: number, y: number, width: number, height: number): void
+
+  abstract getAllDimensions(): Promise<SystemApplicationDimensions[]>
 
 }
